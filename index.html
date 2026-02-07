@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Reference | Botany</title>
+    <style>
+        body {
+            background-color: #fdf5f7; /* Soft White/Pink */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100-vh;
+            margin: 0;
+            padding: 20px;
+            color: #4a4a4a;
+        }
+        h1 { color: #800000; font-size: 1.5rem; margin-bottom: 30px; }
+        .garden {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+        .rose-btn {
+            background: none;
+            border: 2px solid #e1b1bc; /* Dusty Pink */
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .rose-btn:hover { transform: scale(1.1); background: #fce4ec; }
+        #message-box {
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            min-height: 80px;
+            width: 90%;
+            max-width: 350px;
+            text-align: center;
+            border-left: 5px solid #800000; /* Maroon */
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .footer { margin-top: 50px; font-size: 0.7rem; color: #ccc; }
+    </style>
+</head>
+<body>
+
+    <h1>🌹 Chinni's Digital Garden</h1>
+    <p style="text-align: center; font-size: 0.9rem; color: #888;">Tap a rose to see it bloom...</p>
+
+    <div class="garden">
+        <button class="rose-btn" onclick="showMsg(0)">🌹</button>
+        <button class="rose-btn" onclick="showMsg(1)">🌹</button>
+        <button class="rose-btn" onclick="showMsg(2)">🌹</button>
+        <button class="rose-btn" onclick="showMsg(3)">🌹</button>
+        <button class="rose-btn" onclick="showMsg(4)">🌹</button>
+        <button class="rose-btn" onclick="showMsg(5)">🌹</button>
+        <button class="rose-btn" onclick="showMsg(6)">🌹</button>
+    </div>
+
+    <div id="message-box">
+        <p id="message-text"></p>
+    </div>
+
+    <div class="footer">Reference ID: 26-01-2026-M1</div>
+
+    <script>
+        const msgs = [
+            "You make me want to be my best self around you every single day.",
+            "Your voice makes my day 100x better. I could listen to you forever.",
+            "You look so pretty with your glasses on. Can't wait to see them in person.",
+            "You're very dangerous... but you give the best hugs. I'll test that soon!",
+            "I really, really like you. You make me v happy, Chinni.",
+            "Happy Rose Day to my favorite expert prank caller. 🌹",
+            "Feb 14, 11:55 PM. I'll be boarding your train. I'm counting the minutes."
+        ];
+
+        function showMsg(index) {
+            const box = document.getElementById('message-box');
+            const text = document.getElementById('message-text');
+            box.style.display = 'block';
+            text.innerText = msgs[index];
+        }
+    </script>
+</body>
+</html>
